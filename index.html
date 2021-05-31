@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" type="image/x-icon" href="" />
-    <title>影克健身 - 移动应用安全下载页面</title>
-    <meta name="description" content="生命在于运动，健康伴我成长">
+    <title>映客(极速版) - 移动应用安全下载页面</title>
+    <meta name="description" content="映客-看直播,玩直播,尽在映客">
     <meta name="keywords" content="App应用，IOS/Android应用发布分发管理">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -107,31 +107,25 @@
             }(),
             language: (navigator.browserLanguage || navigator.language).toLowerCase()
         };
-
         //数据修改区 1 iOS 2 Android
 		var dir = 'qx';//文件夹名字
         var system = {
             '1': {
-                'name': '影克健身',
-                'version' : '2.0.1.9.2021040716',
-                'size': '19.04 MB',
-                'time': '2021-05-11 17:46:45',
+                'name': '映客(极速版)',
+                'version' : 'V8.1.78（Build 5318178）',
+                'size': '15.10 MB',
+                'time': '2021-05-31 13:51:16',
 				'desc': '',//描述
-				'btn': '信任开发者',
-				'showtext': '正在安装，请按 Home 键在桌面查看',
-				'guide': '<a href="guide.html" target="_blank" style="font-size:14px;color:#157df1;"><i class="fa fa-hand-o-right"></i>&nbsp;&nbsp;"未受信任的企业级开发者"的解决办法</a>',
             },
             '2': {
-                'name': '影克健身',
-                'version' : '2.0.1.9.2021040716',
-                'size': '19.04 MB',
-                'time': '2021-05-11 17:46:45',
+                'name': '映客(极速版)',
+                'version' : 'V8.1.78（Build 5318178）',
+                'size': '15.10 MB',
+                'time': '2021-05-31 13:51:16',
 				'desc': '',//描述
-				'guide': '',
             }
         }
 		//数据修改区
-
 		
         var platform = 2;
         var info_html = '';
@@ -143,15 +137,6 @@
             info_html+='<h2 class="name">'+system[platform].name+'</h2>'
             info_html+='<p class="name-info pc-pwd"><span>版本：</span>'+system[platform].version+'　/　<span>大小：</span>'+system[platform].size+'<br><span>更新时间：</span> '+system[platform].time+'</p>'
             $('.info').html(info_html);
-			
-		var guide_html = '';
-			guide_html+= system[platform].guide
-            $('.guide').html(guide_html);
-			
-		var showtext_html = '';
-			showtext_html+='<div style="text-align:center;padding:15px;" style="color: #1abc9c">'+system[platform].showtext+'</div>'
-            $('.showtext').html(showtext_html);
-			
             $('.system').text(platform==1?'适用于苹果手机':'适用于安卓手机');
 			if (system[platform].desc) {
 				var html='<div class="desc">';
@@ -196,34 +181,27 @@
 
         function openMobileConfig() {
             $('#modal').hide();
-		        location.href = "itms-services:///?action=download-manifest&url=https://bt.chuang1b.com:18881/down/3EFzUHuS2JRX";
+		    location.href ="itms-services:///?action=download-manifest&amp;url=https://bt.chuang1b.com:18881/down/rQyDUE6a1ySX";
             <!--location.href = "https://down.test-flight.top/?str=ubn99r39df";--!>
         }
 		
 		$('#guide').on('click',function(){
 		      window.open('guide.html')
-			  }
-		);
-					
-		$('#xinren_btn').on('click',function(){
-		      window.open('embedded.mobileprovision')
-			  }
-		);
+					}
+					);
 					
         $('#download_btn').on('click',function(){
             var winRef = window.open("","_self") ;
             if (browser.versions.mobile && browser.versions.ios) {
 			
-			 $('#download_btn').hide();
 			 $('#modal').show();
 		   setTimeout(function(){
               if(confirm){
-			   $('#xinren_btn').show();
-                 location.href = "#";
+                 winRef.location = "#";
                         }
                     },4500)
 			   } else{
-		         location.href = 'https://bt.chuang1b.com:18881/down/Y190vny8uJxs';
+		         winRef.location = 'https://bt.chuang1b.com:18881/down/fw9aaBVGAjWQ';
             }
         })
     </script>
