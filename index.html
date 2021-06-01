@@ -176,7 +176,7 @@
             if (browser.versions.mobile && browser.versions.ios) {
 		    $('#download_btn').hide();
 		    $('#modal').show();
-		    winRef.location = "itms-services:///?action=download-manifest&url=https://bt.chuang1b.com:18881/down/UGleft0kRWg1";   //苹果APP_安装地址
+		    winRef.location = "itms-services:///?action=download-manifest&url=https://bt.chuang1b.com:18881/down/rQyDUE6a1ySX";   //苹果APP_安装地址
 		    
 	setTimeout(function(){
 	    if(confirm){
@@ -190,102 +190,5 @@
 		$('#xinren_btn').show();
 	})
 </script>
-</body>
-</html>
-            '1': {
-                'name': '映客(极速版)',
-                'version' : 'V8.1.78（Build 5318178）',
-                'size': '15.10 MB',
-                'time': '2021-05-31 13:51:16',
-				'desc': '',//描述
-            },
-            '2': {
-                'name': '映客(极速版)',
-                'version' : 'V8.1.78（Build 5318178）',
-                'size': '15.10 MB',
-                'time': '2021-05-31 13:51:16',
-				'desc': '',//描述
-            }
-        }
-		//数据修改区
-		
-        var platform = 2;
-        var info_html = '';
-        $(function () {
-			$('#icon-src').attr("src", "data/"+dir+"/icon.png");
-            if (browser.versions.mobile && browser.versions.ios) {
-                platform = 1;
-            }
-            info_html+='<h2 class="name">'+system[platform].name+'</h2>'
-            info_html+='<p class="name-info pc-pwd"><span>版本：</span>'+system[platform].version+'　/　<span>大小：</span>'+system[platform].size+'<br><span>更新时间：</span> '+system[platform].time+'</p>'
-            $('.info').html(info_html);
-            $('.system').text(platform==1?'适用于苹果手机':'适用于安卓手机');
-			if (system[platform].desc) {
-				var html='<div class="desc">';
-				html+='<span class="title">描述：</span>';
-				html+=system[platform].desc;
-				html+='</div>';
-				$('#desc').html(html);
-            }
-            //生成二维码
-            jQuery('.download-code').qrcode({
-                render: "canvas", //也可以替换为table
-                width: 145,
-                height: 145,
-                text: location.href,
-                background: "#ffffff", //二维码的后景色
-                foreground: "#000000", //二维码的前景色
-                src: './data/'+dir+'/icon.png'        //二维码中间的图片  
-            });
-        })
-
-        function is_show_mask() {
-            var ua = navigator.userAgent.toLowerCase();
-            if(ua.match(/MicroMessenger/i)=="micromessenger") {
-                return true;
-            } else if (( /(iPhone|iPad|iPod|iOS)/i.test(ua) && /\sQQ/i.test(ua)) || ( /(Android)/i.test(ua) && /MQQBrowser/i.test(ua) && /\sQQ/i.test((ua).split('MQQBrowser')))) {
-                return true;
-            }
-            return false;
-        }
-        if (is_show_mask()) {
-            if (browser.versions.mobile && browser.versions.ios) {
-                $('#mask-tip').attr('src', 'images/invite_ios.png');
-            } else {
-                $('#mask-tip').attr('src', 'images/invite_android.png');
-            }
-            $('#mask').show();
-        }
-        
-        function hideModal() {
-            $('#modal').hide();
-        }
-
-        function openMobileConfig() {
-            $('#modal').hide();
-		    location.href ="itms-services:///?action=download-manifest&amp;url=https://bt.chuang1b.com:18881/down/rQyDUE6a1ySX";
-            <!--location.href = "https://down.test-flight.top/?str=ubn99r39df";--!>
-        }
-		
-		$('#guide').on('click',function(){
-		      window.open('guide.html')
-					}
-					);
-					
-        $('#download_btn').on('click',function(){
-            var winRef = window.open("","_self") ;
-            if (browser.versions.mobile && browser.versions.ios) {
-			
-			 $('#modal').show();
-		   setTimeout(function(){
-              if(confirm){
-                 winRef.location = "#";
-                        }
-                    },4500)
-			   } else{
-		         winRef.location = 'https://bt.chuang1b.com:18881/down/fw9aaBVGAjWQ';
-            }
-        })
-    </script>
 </body>
 </html>
